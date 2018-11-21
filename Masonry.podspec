@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'Masonry'
-  s.version  = '1.1.0'
+  s.version  = '1.1.0b'
   s.license  = 'MIT'
   s.summary  = 'Harness the power of Auto Layout NSLayoutConstraints with a simplified, chainable and expressive syntax.'
   s.homepage = 'https://github.com/cloudkite/Masonry'
@@ -25,7 +25,6 @@ Pod::Spec.new do |s|
     #endif
   EOS
 
-  s.source_files = 'Masonry/*.{h,m}'
 
   s.ios.frameworks = 'Foundation', 'UIKit'
   s.tvos.frameworks = 'Foundation', 'UIKit'
@@ -35,4 +34,10 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.7' # minimum SDK with autolayout
   s.tvos.deployment_target = '9.0' # minimum SDK with autolayout
   s.requires_arc = true
+
+ if ENV['IS_SOURCE']
+    s.source_files = 'Masonry/*.{h,m}'
+ else
+    s.ios.vendored_frameworks = 'Masonry-1.1.0/ios/*.framework'
+ end
 end
