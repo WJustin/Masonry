@@ -25,11 +25,6 @@ Pod::Spec.new do |s|
     #endif
   EOS
 
-
-  s.ios.frameworks = 'Foundation', 'UIKit'
-  s.tvos.frameworks = 'Foundation', 'UIKit'
-  s.osx.frameworks = 'Foundation', 'AppKit'
-
   s.ios.deployment_target = '6.0' # minimum SDK with autolayout
   s.osx.deployment_target = '10.7' # minimum SDK with autolayout
   s.tvos.deployment_target = '9.0' # minimum SDK with autolayout
@@ -38,6 +33,11 @@ Pod::Spec.new do |s|
  if ENV['IS_SOURCE']
     s.source_files = 'Masonry/*.{h,m}'
  else
+    s.source_files = ''Masonry-1.1.0/ios/**/*.{h}'
     s.ios.vendored_frameworks = 'Masonry-1.1.0/ios/*.framework'
  end
+
+  s.ios.frameworks = 'Foundation', 'UIKit'
+  s.tvos.frameworks = 'Foundation', 'UIKit'
+  s.osx.frameworks = 'Foundation', 'AppKit'
 end
