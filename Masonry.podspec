@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'Masonry'
-  s.version  = '1.1.5'
+  s.version  = '1.1.4'
   s.license  = 'MIT'
   s.summary  = 'Harness the power of Auto Layout NSLayoutConstraints with a simplified, chainable and expressive syntax.'
   s.homepage = 'https://github.com/cloudkite/Masonry'
@@ -33,6 +33,7 @@ Pod::Spec.new do |s|
  if ENV['IS_SOURCE']
     s.source_files = 'Masonry/*.{h,m}'
  else
+    s.source_files = 'Masonry-1.1.0/ios/**/*.{h}'
     s.ios.vendored_frameworks = 'Masonry-1.1.0/ios/*.framework'
  end
 
